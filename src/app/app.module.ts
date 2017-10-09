@@ -8,6 +8,8 @@ import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './shared/material/material.module';
 
+import { MasterDataModule } from './master-data/master-data.module';
+
 import 'hammerjs';
 import './rxjs-extensions';
 
@@ -27,6 +29,7 @@ import { routing } from './app.routing';
 		SidenavModule,
 		HomeModule,
 		AuthModule,
+		MasterDataModule,
 		routing
 	],
 	providers: [
