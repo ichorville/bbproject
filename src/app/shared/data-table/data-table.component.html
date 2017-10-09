@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<!-- interpollate title to view on Page -->
+			<h3 *ngIf="title" class="title">
+				Manage {{ title }}
+			</h3>
+		</div>
+		<div *ngIf="addButton" class="col-md-6 col-sm-6 col-xs-6"
+			style="padding-top: 5px;">
+			<a class="btn btn-primary pull-right" 
+				routerLinkActive="active" routerLink="{{url}}/add">
+				Add {{ title }}
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header" data-background-color="purple">
+					<div class="row">
+						<!-- search module: accepts two parameters -->
+						<search
+							[terms]="resultArray"
+							[parameters]="columns"
+							(onFilter)="reDraw($event)">
+						</search>
+					</div>
+				</div>
+				<div *ngIf="isValid" class="card-content table-responsive">
+					<table *ngIf="isInit" class="table">
+						<thead class="text-primary">
+							<tr>
+								<!-- additional space for button options -->
+								<th></th>
+								<!-- load the columns as defined in the child component -->
+								<th *ngFor="let column of columns">
+									{{ column.name }}
+								</th> 
+							</tr>
+						</thead>
+						<tbody *ngIf="filteredRows.length > 0">
+							<tr *ngFor="let row of filteredRows">
+								<td class="td-actions text-right">
+									<button *ngIf="taskEdit" type="button" class="btn btn-primary btn-simple btn-xs"
+										routerLink="{{url}}{{row.id}}/edit">
+										<i class="material-icons">edit</i>
+									</button>
+									<button *ngIf="taskDetail" type="button" class="btn btn-primary btn-simple btn-xs"
+										routerLink="{{url}}{{row.id}}/detail">
+										<i class="material-icons">visibility</i>
+									</button>
+									<button *ngIf="taskForm" type="button" class="btn btn-primary btn-simple btn-xs"
+										routerLink="{{url}}{{row.id}}/form">
+										<i class="material-icons">description</i>
+									</button>
+									<button *ngIf="taskDelete" type="button" class="btn btn-danger btn-simple btn-xs">
+										<i class="material-icons">close</i>
+									</button>
+								</td>
+								<td *ngFor="let column of columns">
+									<!-- fill in each column with the recpective row element 
+										with the correct type checked -->
+									<div [ngSwitch]="column.type">
+										<div *ngSwitchCase="'string'">{{ row[column.attr] }}</div>
+										<div *ngSwitchCase="'number'">{{ row[column.attr] }}</div>
+										<div *ngSwitchCase="'array'">{{ row[column.attr] }}</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div *ngIf="!isValid" class="card-content table-responsive">
+					<h3>No Matching Records Found</h3>
+				</div>
+				<div *ngIf="!isInit" style="display:flex;justify-content:center;margin-top:20px;margin-bottom:30px;">
+					<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+						<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="isValid" class="row">
+		<div *ngIf="isInit" class="col-md-12 nav-align-center">
+			<!-- pagination module: accepts three parameters -->
+			<pagination style="display: inline-block;"
+				[pages]="pages"
+				[selectedPage]="selectedPage"
+				(onPageClick)="paginate($event)">
+			</pagination>				
+		</div>
+	</div>
+</div>
