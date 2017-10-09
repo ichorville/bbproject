@@ -12,6 +12,7 @@ import { MatTabsModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { MatToolbarModule } from '@angular/material';
         MatTabsModule,
         MatInputModule,
         MatExpansionModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatCheckboxModule
     ],
     exports: [
         MatCardModule,
@@ -42,7 +44,8 @@ import { MatToolbarModule } from '@angular/material';
         MatTabsModule,
         MatInputModule,
         MatExpansionModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatCheckboxModule
     ]
 })
 export class MaterialModule {}
