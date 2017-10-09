@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { fadeInAnimation } from '../shared/animations/fade-in.animation';
+
 import { AuthService } from './../auth/auth.service';
 
 import { LoginVariable } from '../global';
@@ -8,7 +10,9 @@ import { LoginVariable } from '../global';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: ['./login.component.css']
+	styleUrls: ['./login.component.css'],
+	animations: [fadeInAnimation],
+	host: {'[@fadeInAnimation]': ''}
 })
 
 export class LoginComponent implements OnInit {

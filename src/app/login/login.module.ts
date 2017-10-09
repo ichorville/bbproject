@@ -30,6 +30,8 @@ import { AuthService } from '../auth/auth.service';
 	providers: [
 		AuthService
 	],
-  exports: [LoginComponent]
+	exports: [
+		LoginComponent
+	]
 })
 export class LoginModule { }
