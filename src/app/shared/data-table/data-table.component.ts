@@ -73,7 +73,6 @@ export class DataTableComponent implements OnInit, OnChanges {
 		try {
 			// string base for the search module to search with
 			this.resultArray = this.rows;
-			console.log(this.rows);
 
 			// calculate the no of pagination pages
 			this._ps.getPageCount(this.rows.length).then((pages) => {
