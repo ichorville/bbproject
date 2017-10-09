@@ -1,3 +1,10 @@
-<p>
-  company-master-list works!
-</p>
+<app-loader *ngIf="!completed"></app-loader>
+<div class="app-body">
+	<app-data-table *ngIf="completed"
+		[title]="title" 
+		[url]="url" 
+		[columns]="columns" 
+		[rows]="rows" 
+		(onDelete)="delete($event)">
+	</app-data-table>
+</div>

@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from '../../shared/material/material.module';
+import { DataTableModule } from '../../shared/data-table/data-table.module';
+import { LoaderModule } from '../../shared/loader/loader.module';
 
 import { CompanyMasterComponent } from './company-master.component';
 import { CompanyMasterAddComponent } from './company-master-add/company-master-add.component';
@@ -22,7 +24,11 @@ import { CompanyMasterService } from './company-master.service';
 		BrowserModule,
 		BrowserAnimationsModule,
 		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
 		MaterialModule,
+		DataTableModule,
+		LoaderModule,
 		routing
 	],
 	declarations: [
