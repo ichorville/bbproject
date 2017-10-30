@@ -16,4 +16,8 @@ export const LoginVariable = Object ({
 	IS_LOGGED_IN: false,
 	USER_PROFILE: null
 });
-	
+	/**
+	 * mind mup mockup link 
+	 * 
+	 * https://drive.mindmup.com/map/0Bw1829ng9wEHa09neGZfdjVmdmc#
+	 */
