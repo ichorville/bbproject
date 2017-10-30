@@ -1,6 +1,10 @@
 <app-loader *ngIf="!completed"></app-loader>
 <div class="app-body">
-	<app-data-table *ngIf="completed"
+	<app-data-table 
+		*ngIf="completed"
+		[taskEdit]="taskEdit"
+		[taskDelete]="taskDelete"
+		[addButton]="addButton"
 		[title]="title" 
 		[url]="url" 
 		[columns]="columns" 

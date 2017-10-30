@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from '../../shared/material/material.module';
 import { DataTableModule } from '../../shared/data-table/data-table.module';
+import { DynamicFormModule } from '../../shared/dynamic-form/dynamic-form.module';
 import { LoaderModule } from '../../shared/loader/loader.module';
 
 import { CompanyMasterComponent } from './company-master.component';
@@ -28,6 +29,7 @@ import { CompanyMasterService } from './company-master.service';
 		ReactiveFormsModule,
 		MaterialModule,
 		DataTableModule,
+		DynamicFormModule,
 		LoaderModule,
 		routing
 	],
