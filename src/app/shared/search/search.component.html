@@ -1,24 +1,24 @@
-<div class="col-md-11 col-sm-11 col-xs-10">
-	<md-input-container class="full-width">
+<div class="col-mat-11 col-sm-11 col-xs-10">
+	<mat-input-container class="full-width">
 		<input [disabled]="selectedParameters.length == 0" 
-		mdInput placeholder="Search" (keyup)="search($event.target.value)"
+		matInput placeholder="Search" (keyup)="search($event.target.value)"
 		type="text" autocomplete="off">
-	</md-input-container>
+	</mat-input-container>
 </div>
-<div class="col-md-1 col-sm-1 col-xs-2" style="padding-top: 10px;">
-	<button md-icon-button [matMenuTriggerFor]="menu">
-		<md-icon>more_vert</md-icon>
+<div class="col-mat-1 col-sm-1 col-xs-2" style="padding-top: 10px;">
+	<button mat-icon-button [matMenuTriggerFor]="menu">
+		<mat-icon>more_vert</mat-icon>
 	</button>
 	<mat-menu #menu="matMenu">
-		<md-list>
-			<md-list-item *ngFor="let parameter of parameters">
-				<md-checkbox
+		<mat-list>
+			<mat-list-item *ngFor="let parameter of parameters">
+				<mat-checkbox
 					[(ngModel)]="parameter.status"
 					(change)="selectParameter(parameter)"
 					style="font-weight: 100 !important;">
 					{{ parameter.name }}
-				</md-checkbox>
-			</md-list-item>
-		</md-list>
+				</mat-checkbox>
+			</mat-list-item>
+		</mat-list>
 	</mat-menu>
 </div>
