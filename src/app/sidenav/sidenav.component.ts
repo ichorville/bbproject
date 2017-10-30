@@ -18,6 +18,8 @@ import { LoginVariable } from '../global';
 export class SidenavComponent implements OnInit {
 
 	isLoggedIn$: Observable<boolean>;
+
+	isAValidProfile: Observable<string>;
 	
 	constructor(
 		private router: Router,
@@ -29,6 +31,7 @@ export class SidenavComponent implements OnInit {
 			this.router.navigateByUrl(`/login`);
 		}
 		this.isLoggedIn$ = this.authService.isLoggedIn;
+		this.isAValidProfile = this.authService.isAValidProfile['source']['_value'];
 	}
 
 	onLogout() {

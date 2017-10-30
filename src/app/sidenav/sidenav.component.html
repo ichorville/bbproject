@@ -14,17 +14,20 @@
 			<mat-expansion-panel [hideToggle]="hideToggle">
 				<mat-expansion-panel-header>Master Data</mat-expansion-panel-header>
 				<mat-list>
-					<mat-list-item routerLinkActive="active" routerLink="/master-data/companies">
+					<mat-list-item routerLinkActive="active" routerLink="/master-data/companies"
+						*ngIf="isAValidProfile != 'User'">
 						<mat-icon class="icon" mat-list-avatar>business_center</mat-icon>
 						<a>Companies</a>
 					</mat-list-item>
 					<mat-divider></mat-divider>
-					<mat-list-item routerLinkActive="active" routerLink="/master-data/branches">
+					<mat-list-item routerLinkActive="active" routerLink="/master-data/branches"
+						*ngIf="isAValidProfile != 'User'">
 						<mat-icon class="icon" mat-list-avatar>art_track</mat-icon>
 						<a>Branches</a>
 					</mat-list-item>
 					<mat-divider></mat-divider>
-					<mat-list-item routerLinkActive="active" routerLink="/master-data/users">
+					<mat-list-item routerLinkActive="active" routerLink="/master-data/users"
+						*ngIf="isAValidProfile == 'Admin' ||  isAValidProfile == 'User'">
 						<mat-icon class="icon" mat-list-avatar>art_track</mat-icon>
 						<a>Users</a>
 					</mat-list-item>
