@@ -1,3 +1,12 @@
-<p>
-  company-master-add works!
-</p>
+<div class="container app-body">
+	<ol class="breadcrumb">
+		<li><a routerLink="/master-data/companies">Companies</a></li>
+		<li class="active">Add</li>
+	</ol>
+</div>
+<dynamic-form 
+	[title]="title" 
+	[formElements]="formElements" 
+	[buttonValue]="buttonValue" 
+	(onFormSubmit)="submit($event)">
+</dynamic-form>
