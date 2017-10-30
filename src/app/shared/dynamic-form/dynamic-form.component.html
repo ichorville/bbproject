@@ -13,14 +13,14 @@
 							<div *ngFor="let formElement of formElements">
 								<div [ngSwitch]="formElement.controlType">
 									<!-- form textbox  -->
-									<mat-input-container class="full-width" *ngSwitchCase="'textbox'">
+									<mat-form-field class="full-width" *ngSwitchCase="'textbox'">
 										<input matInput placeholder="{{ formElement.placeholder }}" [formControlName]="formElement.key" [id]="formElement.key" [type]="formElement.type"
 											[value]=formElement.value autocomplete="off" [(ngModel)]="mockModel[formElement['key']]">
 										<!-- form textbox errors  -->
-										<mat-error *ngIf="formElement.errors">
+										<mat-hint *ngIf="formElement.errors">
 											{{ formElement.errors }}
-										</mat-error> 
-									</mat-input-container>
+										</mat-hint> 
+									</mat-form-field>
 									<!-- form file upload  -->
 									<input *ngSwitchCase="'file'" [formControlName]="formElement.key" [id]="formElement.key" [type]="formElement.type" class="form-control"
 										[value]=formElement.value placeholder="{{ formElement.placeholder }}" (change)="setFile($event)"
