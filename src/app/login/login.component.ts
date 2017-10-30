@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
 	form: FormGroup;
 	private formSubmitAttempt: boolean;
+	private loginAttempt;
 
 	constructor(
 		private fb: FormBuilder,
@@ -46,8 +47,10 @@ export class LoginComponent implements OnInit {
 
 	onSubmit() {
 		if (this.form.valid) {
-			this.authService.login(this.form.value);
-		}
-		this.formSubmitAttempt = true;
+			this.authService.login(this.form.value).then((result?) => {
+				//this.formSubmitAttempt = result;
+				this.loginAttempt = result;
+			});
+		}	
 	}
 }
