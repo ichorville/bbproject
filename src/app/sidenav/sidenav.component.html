@@ -1,78 +1,79 @@
-<md-sidenav-container *ngIf="isLoggedIn$ | async as isLoggedIn">
-	<md-sidenav #sidenav mode="over" opened="false">
-		<md-card class="profile-section">
+<mat-sidenav-container *ngIf="isLoggedIn$ | async as isLoggedIn">
+	<mat-sidenav #sidenav mode="over" opened="false">
+		<mat-card class="profile-section">
 			<div class="container container-width">
 				<div class="row">
-					<md-card-header>
-						<!-- <img class="profile-image" md-card-image src="assets/img/terminus.png"> -->
+					<mat-card-header>
+						<!-- <img class="profile-image" mat-card-image src="assets/img/terminus.png"> -->
 						<h3>Image appears here</h3>
-					</md-card-header>
+					</mat-card-header>
 				</div>
 			</div>
-		</md-card>
-		<md-accordion [displayMode]="flat" [multi]="multi" class="md-expansion-demo-width">
-			<md-expansion-panel [hideToggle]="hideToggle">
-				<md-expansion-panel-header>Master Data</md-expansion-panel-header>
-				<md-list>
-					<md-list-item routerLinkActive="active" routerLink="/master-data/companies">
-						<md-icon class="icon" md-list-avatar>business_center</md-icon>
+		</mat-card>
+		<mat-accordion [displayMode]="flat" [multi]="multi" class="mat-expansion-demo-width">
+			<mat-expansion-panel [hideToggle]="hideToggle">
+				<mat-expansion-panel-header>Master Data</mat-expansion-panel-header>
+				<mat-list>
+					<mat-list-item routerLinkActive="active" routerLink="/master-data/companies">
+						<mat-icon class="icon" mat-list-avatar>business_center</mat-icon>
 						<a>Companies</a>
-					</md-list-item>
-					<md-divider></md-divider>
-					<md-list-item routerLinkActive="active" routerLink="/master-data/branches">
-						<md-icon class="icon" md-list-avatar>art_track</md-icon>
+					</mat-list-item>
+					<mat-divider></mat-divider>
+					<mat-list-item routerLinkActive="active" routerLink="/master-data/branches">
+						<mat-icon class="icon" mat-list-avatar>art_track</mat-icon>
 						<a>Branches</a>
-					</md-list-item>
-					<md-divider></md-divider>
-					<md-list-item routerLinkActive="active" routerLink="/master-data/users">
-						<md-icon class="icon" md-list-avatar>art_track</md-icon>
+					</mat-list-item>
+					<mat-divider></mat-divider>
+					<mat-list-item routerLinkActive="active" routerLink="/master-data/users">
+						<mat-icon class="icon" mat-list-avatar>art_track</mat-icon>
 						<a>Users</a>
-					</md-list-item>
-				</md-list>
-			</md-expansion-panel>
-			<md-expansion-panel [hideToggle]="hideToggle">
-				<md-expansion-panel-header>Configuration</md-expansion-panel-header>
-				<md-list>
-					<md-list-item routerLinkActive="active" routerLink="/configuration/companies">
-						<md-icon class="icon" md-list-avatar>call</md-icon>
+					</mat-list-item>
+				</mat-list>
+			</mat-expansion-panel>
+		</mat-accordion>
+			<!--<mat-expansion-panel [hideToggle]="hideToggle">
+				<mat-expansion-panel-header>Configuration</mat-expansion-panel-header>
+				<mat-list>
+					<mat-list-item routerLinkActive="active" routerLink="/configuration/companies">
+						<mat-icon class="icon" mat-list-avatar>call</mat-icon>
 						<a>Companies</a>
-					</md-list-item>
-					<md-divider></md-divider>
-					<md-list-item routerLinkActive="active" routerLink="/configuration/branches">
-						<md-icon class="icon" md-list-avatar>playlist_add</md-icon>
+					</mat-list-item>
+					<mat-divider></mat-divider>
+					<mat-list-item routerLinkActive="active" routerLink="/configuration/branches">
+						<mat-icon class="icon" mat-list-avatar>playlist_add</mat-icon>
 						<a>Branches</a>
-					</md-list-item>
-					<md-divider></md-divider>
-					<md-list-item routerLinkActive="active" routerLink="/configuration/users">
-						<md-icon class="icon" md-list-avatar>playlist_add</md-icon>
+					</mat-list-item>
+					<mat-divider></mat-divider>
+					<mat-list-item routerLinkActive="active" routerLink="/configuration/users">
+						<mat-icon class="icon" mat-list-avatar>playlist_add</mat-icon>
 						<a>Users</a>
-					</md-list-item>
-				</md-list>
-			</md-expansion-panel>
-			<md-expansion-panel [hideToggle]="hideToggle">
-				<md-expansion-panel-header>Administration</md-expansion-panel-header>
-				<md-list>
-					<md-list-item routerLinkActive="active" routerLink="/administration/users">
-						<md-icon class="icon" md-list-avatar>person</md-icon>
+					</mat-list-item>
+				</mat-list>
+			</mat-expansion-panel>
+			<mat-expansion-panel [hideToggle]="hideToggle">
+				<mat-expansion-panel-header>Administration</mat-expansion-panel-header>
+				<mat-list>
+					<mat-list-item routerLinkActive="active" routerLink="/administration/users">
+						<mat-icon class="icon" mat-list-avatar>person</mat-icon>
 						<a>Users</a>
-					</md-list-item>
-				</md-list>
-			</md-expansion-panel>
-		</md-accordion>
-	</md-sidenav>
-	<md-toolbar color="primary">
-		<md-icon class="menu" (click)="sidenav.toggle()">menu</md-icon>
+					</mat-list-item>
+				</mat-list>
+			</mat-expansion-panel>
+		</mat-accordion> -->
+	</mat-sidenav>
+	<mat-toolbar color="primary">
+		<mat-icon class="menu" (click)="sidenav.toggle()">menu</mat-icon>
 		<span class="example-spacer"></span>
-		<button md-icon-button [mdMenuTriggerFor]="menu">
-			<md-icon>person</md-icon>
+		<button mat-icon-button [matMenuTriggerFor]="menu">
+			<mat-icon>person</mat-icon>
 		</button>
-		<md-menu #menu="mdMenu">
-			<button md-button (click)="onLogout()" *ngIf="isLoggedIn"><md-icon>exit_to_app</md-icon>
+		<mat-menu #menu="matMenu">
+			<button mat-button (click)="onLogout()" *ngIf="isLoggedIn"><mat-icon>exit_to_app</mat-icon>
 				<span>Log out</span>
 			</button>
-		</md-menu>
-	</md-toolbar>
+		</mat-menu>
+	</mat-toolbar>
 	<div class="main-content">
 		<router-outlet></router-outlet>		 
    </div>
-</md-sidenav-container>
+</mat-sidenav-container>

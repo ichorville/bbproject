@@ -1,8 +1,8 @@
-md-sidenav {
+mat-sidenav {
 	width: 25%;
 }
 
-md-sidenav-container {
+mat-sidenav-container {
 	height: 100vh;
 }
 
@@ -46,13 +46,13 @@ md-sidenav-container {
 	background: rgba(0,0,0,0.09);
 }
 
-md-nav-list {
+mat-nav-list {
 	padding-top: 0px;
 	padding-left: 30px;
 	padding-right: 40px;
 }
 
-md-list-item {
+mat-list-item {
 	display: flex !important;
 	flex-direction: row;
 	align-items: center;
@@ -65,7 +65,7 @@ md-list-item {
     margin-right: -40px;
 }
 
-md-list-item:hover {
+mat-list-item:hover {
 	background: rgba(0,0,0,.05);
 	color: rgba(0,0,0,0.87);
 	text-decoration: none;
@@ -73,12 +73,13 @@ md-list-item:hover {
 	transition: .3s ease-out;
 }
 
-md-list-item a:hover {
+mat-list-item a:hover {
 	color: rgba(0,0,0,0.87);
 	text-decoration: none;
 	font-weight: 400;
 	transition: .3s ease-out;
 }
+
 
 .icon {
 	margin-left: 60px;
@@ -96,51 +97,21 @@ md-list-item a:hover {
 }
 
 @media (max-width:767px) {
-	md-sidenav {
+	mat-sidenav {
 		width: 80%;
 	}
 }
-
-.ui.black.big.launch.right.attached.fixed.button {
-    position: fixed;
-    top: 2.5em;
-    left: 0px;
-    width: 55px;
-    height: auto;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-transition: 0.3s width ease, 0.5s transform ease;
-}
-
-.ui.black.big.launch.right.attached.fixed.button:hover {
-    width: 120px;
-}
-
-.fixed.launch.button .content.icon {
-    margin-left: 0px;
-}
-
-.fixed.launch.button .text {
-    position: absolute;
-    white-space: nowrap;
-    top: auto;
-    left: 54px;
-}
-
 .example-spacer {
   flex: 1 1 auto;
 }
-md-expansion-panel {
+mat-expansion-panel {
 	padding: 7px;
 }
-md-list-item {
+mat-list-item {
 	cursor: pointer;
 }
 .mat-icon {
 	width: auto !important;
-}
-:host /deep/.mat-expansion-panel-body {
-	padding: 0 24px 0px !important;
 }
 :host /deep/.mat-list {
 	padding-top: 0px !important;
@@ -148,6 +119,11 @@ md-list-item {
 :host /deep/.mat-content {
 	font-size: 16px !important;
 }
-/* md-toolbar {
+:host /deep/.mat-expansion-panel-body {
+	margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* mat-toolbar {
 	background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2) !important;
 } */
