@@ -6,10 +6,10 @@
 	</md-input-container>
 </div>
 <div class="col-md-1 col-sm-1 col-xs-2" style="padding-top: 10px;">
-	<button md-icon-button [mdMenuTriggerFor]="menu">
+	<button md-icon-button [matMenuTriggerFor]="menu">
 		<md-icon>more_vert</md-icon>
 	</button>
-	<md-menu #menu="mdMenu">
+	<mat-menu #menu="matMenu">
 		<md-list>
 			<md-list-item *ngFor="let parameter of parameters">
 				<md-checkbox
@@ -20,5 +20,5 @@
 				</md-checkbox>
 			</md-list-item>
 		</md-list>
-	</md-menu>
+	</mat-menu>
 </div>
