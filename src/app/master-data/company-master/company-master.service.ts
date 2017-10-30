@@ -26,7 +26,13 @@ export class CompanyMasterService {
 		// return this.http.get(this.url).toPromise().then((response) => {
 		// 	return response.json();
 		// });
-	}
+    }
+    
+    create(country): Promise<any> {
+        return Promise.resolve(true).then(() => {
+            COMPANIES.push(country);
+        });
+    }
 }
 
 export var COMPANIES = [
