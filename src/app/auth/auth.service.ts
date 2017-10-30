@@ -20,12 +20,23 @@ export class AuthService {
 		private router: Router
 	) { }
 
-	login(user: User) {
-		if (user.userName !== '' && user.password != '') {
-			this.loggedIn.next(true);
-			LoginVariable.IS_LOGGED_IN = true;
-			this.router.navigate(['/home']);
-		}
+	login(user: User): Promise<boolean> {
+		return Promise.resolve(true).then(() => {
+			if (user.userName == 'binuka14' && user.password == 'binga') {
+				this.loggedIn.next(true);
+				LoginVariable.IS_LOGGED_IN = true;
+				LoginVariable.USER_PROFILE = 'admin';
+				return this.router.navigate(['/home']);
+			} else if (user.userName == 'ichorville' && user.password == 'cmonbeatmeup') {
+				this.loggedIn.next(true);
+				LoginVariable.IS_LOGGED_IN = true;
+				LoginVariable.USER_PROFILE = 'user';
+				return this.router.navigate(['/home']);
+			} else {
+				this.loggedIn.next(false);
+				return true;
+			}
+		});
 	}
 
 	logout() {
