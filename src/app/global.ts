@@ -13,6 +13,7 @@ export const GlobalVariable = Object.freeze({
 });
 
 export const LoginVariable = Object ({ 
-	IS_LOGGED_IN: false
+	IS_LOGGED_IN: false,
+	USER_PROFILE: null
 });
 	
