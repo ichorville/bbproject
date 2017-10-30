@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header" data-background-color="purple">
+						<h4 class="title">{{ title }}</h4>
+						<p class="category">Please complete and save the form</p>
+					</div>
+					<div class="card-content" *ngIf="mockModel">
+						<form (ngSubmit)="onSubmit(form.value)" [formGroup]="form">
+							<div *ngFor="let formElement of formElements">
+								<div [ngSwitch]="formElement.controlType">
+									<!-- form textbox  -->
+									<mat-input-container class="full-width" *ngSwitchCase="'textbox'">
+										<input matInput placeholder="{{ formElement.placeholder }}" [formControlName]="formElement.key" [id]="formElement.key" [type]="formElement.type"
+											[value]=formElement.value autocomplete="off" [(ngModel)]="mockModel[formElement['key']]">
+										<!-- form textbox errors  -->
+										<mat-error *ngIf="formElement.errors">
+											{{ formElement.errors }}
+										</mat-error> 
+									</mat-input-container>
+									<!-- form file upload  -->
+									<input *ngSwitchCase="'file'" [formControlName]="formElement.key" [id]="formElement.key" [type]="formElement.type" class="form-control"
+										[value]=formElement.value placeholder="{{ formElement.placeholder }}" (change)="setFile($event)"
+										[(ngModel)]="mockModel[formElement['key']]">
+									<!-- form dropdown  -->
+									 <mat-select *ngSwitchCase="'dropdown'" class="full-width" [formControlName]="formElement.key " placeholder="{{ formElement.label }}"
+										[id]="formElement.key" [attr.name]="formElement.key" [(ngModel)]="mockModel[formElement['key']]"
+										(change)="onChange($event, formElement)" [disabled]="formElement.disabled">
+										<mat-option *ngFor="let opt of formElement.options" [value]="opt.key">
+											{{ opt.value }}
+										</mat-option>
+										<!-- form dropdown errors  -->
+										<mat-error *ngIf="formElement.errors">
+											{{ formElement.errors }}
+										</mat-error>
+									</mat-select> 
+								</div>
+							</div>
+							<button type="submit"  mat-raised-button [disabled]="!form.valid">
+								{{ buttonValue }}
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</div>
