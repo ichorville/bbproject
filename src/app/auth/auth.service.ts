@@ -12,8 +12,15 @@ import { LoginVariable } from '../global';
 export class AuthService {
 	private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+	// provide empty profile defenition at beginning
+	private profile: BehaviorSubject<string> = new BehaviorSubject<string>(''); 
+
 	get isLoggedIn() {
 		return this.loggedIn.asObservable();
+	}
+
+	get isAValidProfile() {
+		return this.profile.asObservable();
 	}
 
 	constructor(
@@ -24,12 +31,14 @@ export class AuthService {
 		return Promise.resolve(true).then(() => {
 			if (user.userName == 'binuka14' && user.password == 'binga') {
 				this.loggedIn.next(true);
+				this.profile.next('Admin');
 				LoginVariable.IS_LOGGED_IN = true;
 				LoginVariable.USER_PROFILE = 'admin';
 				return this.router.navigate(['/home']);
 			} else if (user.userName == 'ichorville' && user.password == 'cmonbeatmeup') {
 				this.loggedIn.next(true);
 				LoginVariable.IS_LOGGED_IN = true;
+				this.profile.next('User');
 				LoginVariable.USER_PROFILE = 'user';
 				return this.router.navigate(['/home']);
 			} else {
