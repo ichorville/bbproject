@@ -3,10 +3,12 @@ import { Router } from '@angular/router';
 
 import { fadeInAnimation } from '../shared/animations/fade-in.animation';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AuthService } from './../auth/auth.service';
 
 import { LoginVariable } from '../global';
+
+
 
 @Component({
 	selector: 'app-sidenav',
