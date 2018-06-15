@@ -7,7 +7,7 @@ import { SidenavModule } from './sidenav/sidenav.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './shared/material/material.module';
-import { NoConflictStyleCompatibilityMode} from '@angular/material';
+// import { NoConflictStyleCompatibilityMode} from '@angular/material';
 
 import { MasterDataModule } from './master-data/master-data.module';
 
@@ -26,7 +26,7 @@ import { routing } from './app.routing';
 		BrowserModule,
 		BrowserAnimationsModule,
 		MaterialModule,
-		NoConflictStyleCompatibilityMode,
+		// NoConflictStyleCompatibilityMode,
 		LoginModule,
 		SidenavModule,
 		HomeModule,
