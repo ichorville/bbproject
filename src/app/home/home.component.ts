@@ -10,9 +10,9 @@ import { LoginVariable } from '../global';
 })
 export class HomeComponent implements OnInit {
 
-	constructor (
+	constructor(
 		private router: Router
-	) { }	
+	) { }
 
 	ngOnInit() {
 		if (LoginVariable.IS_LOGGED_IN == false) {
