@@ -1,9 +1,9 @@
 <div class="col-mat-11 col-sm-11 col-xs-10">
-	<mat-input-container class="full-width">
+	<mat-form-field class="full-width">
 		<input [disabled]="selectedParameters.length == 0" 
 		matInput placeholder="Search" (keyup)="search($event.target.value)"
 		type="text" autocomplete="off">
-	</mat-input-container>
+	</mat-form-field>
 </div>
 <div class="col-mat-1 col-sm-1 col-xs-2" style="padding-top: 10px;">
 	<button mat-icon-button [matMenuTriggerFor]="menu">

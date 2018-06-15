@@ -7,20 +7,20 @@
 					[formGroup]="form" 
 					(ngSubmit)="onSubmit()">
                     <div class="row">
-                        <mat-input-container class="full-width">
+                        <mat-form-field class="full-width">
                             <input matInput placeholder="User" formControlName="userName" required>
                             <mat-error *ngIf="isFieldInvalid('userName')">
                                 Please inform your user name
                             </mat-error>
-                        </mat-input-container>
+                        </mat-form-field>
                     </div>
                     <div class="row">
-                        <mat-input-container class="full-width">
+                        <mat-form-field class="full-width">
                             <input matInput type="password" placeholder="Password" formControlName="password" required>
                             <mat-error *ngIf="isFieldInvalid('userName')">
                                 Please inform your password
                             </mat-error>
-                        </mat-input-container>
+                        </mat-form-field>
                     </div>
                     <button class="full-width btn-login" mat-raised-button type="submit">Login</button>
                     <mat-error style="text-align:center;" *ngIf="loginAttempt">
